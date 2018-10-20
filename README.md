@@ -95,3 +95,12 @@ sbt "testOnly <PackageName>.<TesterName>"
 To read more about the overall design of test bench please read **Wiki** section **Test Bench**.
 
 ## Getting verilog design
+For each test example, there is a main function which generates verilog file of the design.
+
+```
+sbt runMain <PackageName>.<MainObjectName>
+```
+
+Running following command generates a verilog file in the `RTL` folder.
+
+In order to map the generated verilog on a SoC device please read **SoC FPGA Interface** from our wiki page.
