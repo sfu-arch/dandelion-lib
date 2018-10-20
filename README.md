@@ -1,6 +1,6 @@
-# Dandelion: Library of hardware components for designing parallel dataflow accelerators
+# Dandelion
 
-Dandelion is a library of hardware components to implement parallel dataflow accelerators.
+Dandelion is a library of hardware components to implement **parallel dataflow accelerators.**
 
 ## Getting Started on a Local Ubuntu Machine
 
@@ -56,3 +56,42 @@ autoconf # Create ./configure script
 make
 sudo make install
 ```
+
+
+## Dandelion's dependencies
+Dandelion depends on _Berkeley Hardware Floating-Point Units_ for floating nodes implementation. We have forked Berkely's implementation and applied minor changes to make the library compatible with Dandelion's nodes.
+
+`dandelion-hardflot` needs to be published locally. For publishing the code locally follow the following commands:
+
+```
+$ sbt -DchiselVersion="latest.release" "publishLocal"
+```
+
+## Compiling Dandelion Accelerator
+For compiling dandelion is the first step to build the library
+
+```
+sbt "compile"
+```
+
+
+Dandelion has a set of test cases for testing different dataflow designs. All the dataflow tests are located at:
+```
+src/main/scala/generator
+```
+
+Each of these test cases has a specific test bench and they have been located at following location:
+```
+src/test/main/scala/generator
+```
+User can run each of these test cases to simulate the design. For running a test case the command which is needed to enter is:
+```
+sbt "testOnly <PackageName>.<TesterName>"
+```
+
+* **PackageName:** Is the name of the scala package which the dataflow is been developed within.
+* **TesterName:** Is the specification of test bench in chisel.
+
+To read more about the overall design of test bench please read **Wiki** section **Test Bench**.
+
+## Getting verilog design
