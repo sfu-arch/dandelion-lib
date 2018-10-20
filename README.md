@@ -104,3 +104,9 @@ sbt runMain <PackageName>.<MainObjectName>
 Running following command generates a verilog file in the `RTL` folder.
 
 In order to map the generated verilog on a SoC device please read **SoC FPGA Interface** from our wiki page.
+
+## Contributors
+ - Amirali Sharifian (Simon Fraser University)
+ - Steven Margem (Simon Fraser University)
+ - Navid Rahimi (Simon Fraser University)
+ - Apala Guha (Simon Fraser University)
